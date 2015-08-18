@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/eveningtalks.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Dhamma Talk Log</h1>
+      <p><a href="http://www.dhammatalks.org/mp3_index.html">Thanissaro Bhikkhu's evening dhamma talks</a> are a great
+        background for meditation.  He's like the Bob Ross of breath
+        meditation.  This page uses HTML5 local storage to let you track
+        which talks you've heard.</p>
+
+      <audio id="player" src="http://dhammatalks.org/Archive/y2015/150730_Asalha_Puja.mp3"></audio>
+      <div>
+        <button onclick="$('#player')[0].play()">Play</button>
+        <button onclick="$('#player')[0].pause()">Pause</button>
+        <button onclick="$('#player')[0].volume+=0.1">Volume Up</button>
+        <button onclick="$('#player')[0].volume-=0.1">Volume Down</button>
+        <span id="trackinfo"></span>
+      </div>
+
+      <table id="talktable" class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Play Count</th>
+            <th>Play</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        populateTalkTable();
+      });
+    </script>
+  </body>
+</html>
