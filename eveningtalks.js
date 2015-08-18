@@ -24,6 +24,7 @@ function populateTalkTable() {
     ids.reverse();
     ids.map(function(talk_id) {
         var talk = catalog[talk_id];
+        // I know, right?
         $('#talktable tr:last').after('<tr><td>' + talk_id + '</td><td>' + talk['title'] + '</td><td id="play_count-' + talk_id + '">' + talk['play_count'] + '</td><td><button onclick="playTalk(' + talk_id + ')">Play</button></td><td>' + talk['rating'] + '</td></tr>');
     });
 }
